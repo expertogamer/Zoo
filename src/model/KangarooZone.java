@@ -29,7 +29,7 @@ public class KangarooZone {
 		this.waterQuantity = environment1.getWaterQuantity() + environment2.getWaterQuantity() + environment3.getWaterQuantity();
 	}
 	
-	//Getters and setters (Also know as analyzers and modifiers)
+	//Getters and setters (Also known as analyzers and modifiers)
 	public void setName(String name) { this.name = name; }
 	public void setFoodQuantity(double foodQuantity) { this.foodQuantity = foodQuantity; }
 	public void setWaterQuantity(double waterQuantity) { this.waterQuantity = foodQuantity; }
@@ -50,8 +50,215 @@ public class KangarooZone {
 	public KangarooEnvironment getEnvironment2() { return environment2; }
 	public KangarooEnvironment getEnvironment3() { return environment3; }
 	
-	public void init() {
+	//Changes a kangaroo's environment. Returns false if unsuccessful
+	public boolean changeKangaroo(String name, int environmentNumber) {
 		
+		String sex, bloodType;
+		double height, weight;
+		Date birthDate;
+		boolean success = false;
+		
+		if(environment1.getKangaroo1() != null) {
+			if(environment1.getKangaroo1().getName().equals(name)) {
+				
+				sex = environment1.getKangaroo1().getSex();
+				bloodType = environment1.getKangaroo1().getBloodType();
+				height = environment1.getKangaroo1().getHeight();
+				weight = environment1.getKangaroo1().getWeight();
+				birthDate = environment1.getKangaroo1().getBirthDate();
+				environment1.eliminateKangaroo(name);
+				
+				System.out.println(sex);
+				
+				if(environmentNumber == 1) {
+					return environment1.createKangaroo(name, sex, bloodType, height, weight, birthDate);
+				} else if (environmentNumber == 2) {
+					return environment2.createKangaroo(name, sex, bloodType, height, weight, birthDate);
+				} else if (environmentNumber == 3) {
+					return environment3.createKangaroo(name, sex, bloodType, height, weight, birthDate);
+				}
+			}
+		}
+		
+		if(environment1.getKangaroo2() != null) {
+			if(environment1.getKangaroo2().getName().equals(name)) {
+				
+				sex = environment1.getKangaroo2().getSex();
+				bloodType = environment1.getKangaroo2().getBloodType();
+				height = environment1.getKangaroo2().getHeight();
+				weight = environment1.getKangaroo2().getWeight();
+				birthDate = environment1.getKangaroo2().getBirthDate();
+				environment1.eliminateKangaroo(name);
+				
+				if(environmentNumber == 1) {
+					return environment1.createKangaroo(name, sex, bloodType, height, weight, birthDate);
+				} else if (environmentNumber == 2) {
+					return environment2.createKangaroo(name, sex, bloodType, height, weight, birthDate);
+				} else if (environmentNumber == 3) {
+					return environment3.createKangaroo(name, sex, bloodType, height, weight, birthDate);
+				}
+			}
+		}
+
+		if(environment1.getKangaroo3() != null) {
+			if(environment1.getKangaroo3().getName().equals(name)) {
+				
+				sex = environment1.getKangaroo3().getSex();
+				bloodType = environment1.getKangaroo3().getBloodType();
+				height = environment1.getKangaroo3().getHeight();
+				weight = environment1.getKangaroo3().getWeight();
+				birthDate = environment1.getKangaroo3().getBirthDate();
+				environment1.eliminateKangaroo(name);
+				
+				if(environmentNumber == 1) {
+					return environment1.createKangaroo(name, sex, bloodType, height, weight, birthDate);
+				} else if (environmentNumber == 2) {
+					return environment2.createKangaroo(name, sex, bloodType, height, weight, birthDate);
+				} else if (environmentNumber == 3) {
+					return environment3.createKangaroo(name, sex, bloodType, height, weight, birthDate);
+				}
+				
+			} 
+		}
+		
+		if(environment2.getKangaroo1() != null) {
+			if(environment2.getKangaroo1().getName().equals(name)) {
+				
+				sex = environment2.getKangaroo1().getSex();
+				bloodType = environment2.getKangaroo1().getBloodType();
+				height = environment2.getKangaroo1().getHeight();
+				weight = environment2.getKangaroo1().getWeight();
+				birthDate = environment2.getKangaroo1().getBirthDate();
+				environment2.eliminateKangaroo(name);
+				
+				if(environmentNumber == 1) {
+					return environment1.createKangaroo(name, sex, bloodType, height, weight, birthDate);
+				} else if (environmentNumber == 2) {
+					return environment2.createKangaroo(name, sex, bloodType, height, weight, birthDate);
+				} else if (environmentNumber == 3) {
+					return environment3.createKangaroo(name, sex, bloodType, height, weight, birthDate);
+				}
+				
+			}
+		}
+		
+		if(environment2.getKangaroo2() != null) {
+			if(environment2.getKangaroo2().getName().equals(name)) {
+				
+				sex = environment2.getKangaroo2().getSex();
+				bloodType = environment2.getKangaroo2().getBloodType();
+				height = environment2.getKangaroo2().getHeight();
+				weight = environment2.getKangaroo2().getWeight();
+				birthDate = environment2.getKangaroo2().getBirthDate();
+				environment2.eliminateKangaroo(name);
+				
+				if(environmentNumber == 1) {
+					return environment1.createKangaroo(name, sex, bloodType, height, weight, birthDate);
+				} else if (environmentNumber == 2) {
+					return environment2.createKangaroo(name, sex, bloodType, height, weight, birthDate);
+				} else if (environmentNumber == 3) {
+					return environment3.createKangaroo(name, sex, bloodType, height, weight, birthDate);
+				}
+				
+			}
+		}
+		
+		if(environment2.getKangaroo3() != null) {
+			
+			if(environment2.getKangaroo3().getName().equals(name)) {
+				
+				sex = environment2.getKangaroo3().getSex();
+				bloodType = environment2.getKangaroo3().getBloodType();
+				height = environment2.getKangaroo3().getHeight();
+				weight = environment2.getKangaroo3().getWeight();
+				birthDate = environment2.getKangaroo3().getBirthDate();
+				environment2.eliminateKangaroo(name);
+				
+				if(environmentNumber == 1) {
+					return environment1.createKangaroo(name, sex, bloodType, height, weight, birthDate);
+				} else if (environmentNumber == 2) {
+					return environment2.createKangaroo(name, sex, bloodType, height, weight, birthDate);
+				} else if (environmentNumber == 3) {
+					return environment3.createKangaroo(name, sex, bloodType, height, weight, birthDate);
+				}
+				
+			}
+		}
+		
+		if(environment3.getKangaroo1() != null) {
+			 if(environment3.getKangaroo1().getName().equals(name)) {
+					
+					sex = environment3.getKangaroo1().getSex();
+					bloodType = environment3.getKangaroo1().getBloodType();
+					height = environment3.getKangaroo1().getHeight();
+					weight = environment3.getKangaroo1().getWeight();
+					birthDate = environment3.getKangaroo1().getBirthDate();
+					environment3.eliminateKangaroo(name);
+					
+					if(environmentNumber == 1) {
+						return environment1.createKangaroo(name, sex, bloodType, height, weight, birthDate);
+					} else if (environmentNumber == 2) {
+						return environment2.createKangaroo(name, sex, bloodType, height, weight, birthDate);
+					} else if (environmentNumber == 3) {
+						return environment3.createKangaroo(name, sex, bloodType, height, weight, birthDate);
+					}
+					
+				} 
+		}
+		
+			 
+		if(environment3.getKangaroo2() != null) {
+			if(environment3.getKangaroo2().getName().equals(name)) {
+				
+				sex = environment3.getKangaroo2().getSex();
+				bloodType = environment3.getKangaroo2().getBloodType();
+				height = environment3.getKangaroo2().getHeight();
+				weight = environment3.getKangaroo2().getWeight();
+				birthDate = environment3.getKangaroo2().getBirthDate();
+				environment3.eliminateKangaroo(name);
+				
+				if(environmentNumber == 1) {
+					return environment1.createKangaroo(name, sex, bloodType, height, weight, birthDate);
+				} else if (environmentNumber == 2) {
+					return environment2.createKangaroo(name, sex, bloodType, height, weight, birthDate);
+				} else if (environmentNumber == 3) {
+					return environment3.createKangaroo(name, sex, bloodType, height, weight, birthDate);
+				}
+				
+			} 		
+		}
+			  
+
+
+		if(environment3.getKangaroo3() != null) {
+			if(environment3.getKangaroo3().getName().equals(name)) {
+				
+				sex = environment3.getKangaroo3().getSex();
+				bloodType = environment3.getKangaroo3().getBloodType();
+				height = environment3.getKangaroo3().getHeight();
+				weight = environment3.getKangaroo3().getWeight();
+				birthDate = environment3.getKangaroo3().getBirthDate();
+				environment3.eliminateKangaroo(name);
+				
+				if(environmentNumber == 1) {
+					return environment1.createKangaroo(name, sex, bloodType, height, weight, birthDate);
+				} else if (environmentNumber == 2) {
+					return environment2.createKangaroo(name, sex, bloodType, height, weight, birthDate);
+				} else if (environmentNumber == 3) {
+					return environment3.createKangaroo(name, sex, bloodType, height, weight, birthDate);
+				}
+			
+			}	
+		}	  
+
+		
+		return success;	
+		
+	}
+	
+	//Eliminates a kangaroo. Returns false if unsuccessful
+	public boolean eliminateKangaroo(String name) {
+		return (environment1.eliminateKangaroo(name) || environment2.eliminateKangaroo(name) || environment3.eliminateKangaroo(name));
 	}
 	
 	//Calculates the area
@@ -59,6 +266,7 @@ public class KangarooZone {
 		
 		String msg = environment1.calculateArea() + environment2.calculateArea() + environment3.calculateArea();
 		double a = environment1.getArea() + environment2.getArea() + environment3.getArea();
+		area = a;
 		String areaTotal = "Total area in " + name + " is " + a + " square meters\n";
 		return msg + areaTotal;
 	}
@@ -95,4 +303,18 @@ public class KangarooZone {
 		return msg;
 	}
 	
+	//Returns a string with the kangaroos whose names begin and end with a vowel
+	public String findKangarooWhoseNameBeginsEndsWithVowel() {
+		String msg = environment1.findKangarooWhoseNameBeginsEndsWithVowel() + environment2.findKangarooWhoseNameBeginsEndsWithVowel() + environment3.findKangarooWhoseNameBeginsEndsWithVowel();
+		
+		return msg;
+	}
+	
+	//Gives a report of the vaccination dates of the kangaroos of each environment
+	public String reportVaccines() {
+		
+		String msg = environment1.reportVaccines() + environment2.reportVaccines() + environment3.reportVaccines();
+		
+		return msg;
+	}
 }

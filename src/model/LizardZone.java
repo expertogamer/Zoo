@@ -17,8 +17,7 @@ public class LizardZone {
 	private Lizard lizard2;
 	
 	//Constructor
-	public LizardZone(String name, double temperature, double humidity, double fq, double wq,
-						Lizard l1, Lizard l2) {
+	public LizardZone(String name, double temperature, double humidity, double fq, double wq, Lizard l1, Lizard l2) {
 		this.name = name;
 		this.temperature = temperature;
 		this.humidity = humidity;
@@ -26,11 +25,11 @@ public class LizardZone {
 		this.waterQuantity = wq;
 		this.area = 0;
 		
-		this.lizard1 = l1;
-		this.lizard2 = l2;
+		lizard1 = l1;
+		lizard2 = l2;
 	}
 	
-	//Getters and setters (Also know as analyzers and modifiers)
+	//Getters and setters (Also known as analyzers and modifiers)
 	public void setName(String name) { this.name = name; }
 	public void setFoodQuantity(double foodQuantity) { this.foodQuantity = foodQuantity; }
 	public void setWaterQuantity(double waterQuantity) { this.waterQuantity = foodQuantity; }
@@ -59,16 +58,16 @@ public class LizardZone {
 		
 		String msg;
 		
-		double bmi = 22.0; //There is currently no need to calculate the BMI
+		double bmi = lizard1.calculateBMI() + lizard2.calculateBMI();
 		double waterNeeded = bmi * 0.75;
 		
 		if (waterNeeded < waterQuantity)
 		{
-			msg = "There is not enough water in " + name + "\n";
+			msg = "There is not enough water in the " + name + "\n";
 		}
 		else
 		{
-			msg = "There is sufficient water in " + name + "\n";
+			msg = "There is sufficient water in the " + name + "\n";
 		}
 		
 		return msg;
@@ -86,6 +85,20 @@ public class LizardZone {
 		else 
 		{
 			msg = "There is sufficient food in the Lizard Zone.\n";
+		}
+		
+		return msg;
+	}
+	
+	//Finds the lizards whose names begin and end with a vowel
+	public String findLizardWhoseNameBeginsEndsWithVowel() {
+		String msg = "";
+		
+		if(lizard1.nameBeginsEndsWithVowel()) {
+			msg += lizard1.getName() + "'s name begins and ends with a vowel!\n";
+		}
+		if(lizard2.nameBeginsEndsWithVowel()) {
+			msg += lizard2.getName() + "'s name begins and ends with a vowel!\n";
 		}
 		
 		return msg;

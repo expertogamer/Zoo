@@ -2,10 +2,12 @@ package model;
 
 public class Date {
 	
+	//Attributes
 	private int day;
 	private int month;
 	private int year;
 	
+	//Constructor
 	public Date(int day, int month, int year)
 	{
 		this.day = day;
@@ -13,6 +15,7 @@ public class Date {
 		this.year = year;
 	}
 	
+	//Getters and setters (also known as analyzers and modifiers)
 	public void setDay(int day) { this.day = day; }
 	public void setMonth(int month) { this.month = month; }
 	public void setYear(int year) { this.year = year; }
